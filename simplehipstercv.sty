@@ -33,6 +33,7 @@
 \usetikzlibrary{topaths}
 
 \usepackage{graphicx}
+\usepackage[export]{adjustbox}
 \graphicspath{{images/}}
 %\usepackage[usenames, dvipsnames]{color} 
 % https://de.sharelatex.com/learn/Using_colours_in_LaTeX#!#Reference_guide z.B. \color{RubineRed}
@@ -176,32 +177,23 @@
 {\color{#3}\rule[\baselineskip]{#1\textwidth}{#2}}\vspace{0.5em}
 }
 
-\newcommand{\cvevent}[6]{{#1} & 
-  \textbf{#2}\newline
-  \textsc{#3} $\cdot$ {#4 ~\faChevronRight}\newline
-  {\color{black!70}\footnotesize #5} & 
-  \includegraphics[height=1cm]{#6}
+\newcommand{\cvevent}[6]{%
+  {#1} & \textbf{#2} \\
+  & \textsc{#3} $\cdot$ {#4 ~\faAngleDoubleRight} \\[-0.5em]
+  & {\color{black!70}\footnotesize #5} \\ \noalign{\vspace{2em}}
 }
 
-\newcommand{\cvitem}[6]{{#1} & 
-  \textbf{#2}\newline
-  \textsc{#3} $\cdot$ {#4 ~\faAngleDoubleRight}\newline
-  {\color{black!70}\footnotesize #5} & 
-  \includegraphics[width=1cm]{#6}
+\newcommand{\cvsummary}[6]{%
+  {#1} & \textbf{#2} \\
+  & \textsc{#3} $\cdot$ {#4 ~\faAngleDoubleRight} \\[-0.5em]
+  & {\color{black!70}\footnotesize #5} \\ \noalign{\vspace{2em}}
 }
 
-\newcommand{\cvexp}[6]{{#1} & 
-  \textbf{#2}\newline
-  \textsc{#3} $\cdot$ {#4 ~\faAngleDoubleRight}\newline
-  {\color{black!70}\footnotesize #5} & 
-  \includegraphics[width=1cm]{#6}
-}
-
-\newcommand{\cvdegree}[6]{{#1} & 
+\newcommand{\cvdegree}[6]{{#1} &
   \textbf{#2}\newline
   \textsc{#3} $\cdot$ {#4 {\phantom{i}\footnotesize ~\faUniversity}}\newline
-  {\color{black!70}\scriptsize #5} & 
-  \includegraphics[height=0.7cm]{#6}
+  {\color{black!70}\scriptsize #5} &
+  \includegraphics[height=0.7cm,valign=m]{#6}
 }
 
 \newcommand{\cvdegreeicon}[6]{{#1} & 
