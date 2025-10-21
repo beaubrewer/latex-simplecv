@@ -1,6 +1,6 @@
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{simplehipstercv}[2019/06/22 A New Simple CV Template]
+\ProvidesClass{simplecv}[2025/01/21 A Simple CV Template]
 
 \LoadClass[]{article}
 \RequirePackage{xcolor}
@@ -36,7 +36,7 @@
 
 % TIMELINE
 \definecolor{timelinecolour}{HTML}{414B96} %#660022
-\definecolor{jackbeige}{RGB}{226,212,186} 
+\definecolor{jackbeige}{RGB}{226,212,186}
 
 
 \newcommand{\paracolbackgroundoptions}{
@@ -73,7 +73,7 @@
 
 % TIMELINE
 \definecolor{timelinecolour}{HTML}{414B96} %#660022
-\definecolor{jackbeige}{RGB}{226,212,186}  
+\definecolor{jackbeige}{RGB}{226,212,186}
 
 \newcommand{\paracolbackgroundoptions}{
 \backgroundcolor{c[0](4pt,4pt)(0.5\columnsep,4pt)}[rgb]{0.9,0.9,0.9}
@@ -103,7 +103,7 @@
 
 % TIMELINE
 \definecolor{timelinecolour}{HTML}{414B96} %#660022
-\definecolor{jackbeige}{RGB}{226,212,186} 
+\definecolor{jackbeige}{RGB}{226,212,186}
 
 \newcommand{\paracolbackgroundoptions}{
 \backgroundcolor{c[0](4pt,4pt)(0.5\columnsep,4pt)}[rgb]{0.9,0.9,0.9}
@@ -137,8 +137,8 @@
 
 % TIMELINE
 \definecolor{timelinecolour}{HTML}{414B96} %#660022
-\definecolor{jackbeige}{RGB}{226,212,186} 
- 
+\definecolor{jackbeige}{RGB}{226,212,186}
+
 \newcommand{\paracolbackgroundoptions}{
 \backgroundcolor{c[0](4pt,4pt)(0.5\columnsep,4pt)}[rgb]{1,1,1}
 \backgroundcolor{c[1](0.5\columnsep,4pt)(4pt,4pt)}[rgb]{1,1,1}
@@ -188,9 +188,9 @@
 
 % TIMELINE
 \definecolor{timelinecolour}{HTML}{414B96} %#660022
-\definecolor{jackbeige}{RGB}{226,212,186} 
- 
- 
+\definecolor{jackbeige}{RGB}{226,212,186}
+
+
 \newcommand{\paracolbackgroundoptions}{
 \backgroundcolor{c[0](4pt,4pt)(0.5\columnsep,4pt)}[rgb]{1,1,1}
 \backgroundcolor{c[1](0.5\columnsep,4pt)(4pt,4pt)}[rgb]{1,1,1}
@@ -241,8 +241,8 @@
 
 % TIMELINE
 \definecolor{timelinecolour}{HTML}{414B96} %#660022
-\definecolor{jackbeige}{RGB}{226,212,186} 
- 
+\definecolor{jackbeige}{RGB}{226,212,186}
+
 \newcommand{\paracolbackgroundoptions}{
 \backgroundcolor{c[0](4pt,4pt)(0.5\columnsep,4pt)}[rgb]{0.9,0.9,0.9}
 \backgroundcolor{c[1](0.5\columnsep,4pt)(4pt,4pt)}[rgb]{1,1,1}
@@ -292,8 +292,8 @@
 
 % TIMELINE
 \definecolor{timelinecolour}{HTML}{414B96} %#660022
-\definecolor{jackbeige}{RGB}{226,212,186} 
- 
+\definecolor{jackbeige}{RGB}{226,212,186}
+
 \newcommand{\paracolbackgroundoptions}{
 \backgroundcolor{c[0](4pt,4pt)(0.5\columnsep,4pt)}[rgb]{1,1,1}
 \backgroundcolor{c[1](0.5\columnsep,4pt)(4pt,4pt)}[rgb]{1,1,1}
@@ -336,4 +336,4 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 
-\usepackage{simplehipstercv}
+\RequirePackage{simplecv-commands}
