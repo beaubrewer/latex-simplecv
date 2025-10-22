@@ -4,14 +4,10 @@
 \usepackage[T1]{fontenc}
 
 \usepackage{fontawesome}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=false,
-    pdfborder={0 0 0}
-}
 \setlength{\parindent}{0cm}
 \usepackage{paracol}
 \usepackage{ifthen}
+\usepackage{setspace}
 
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -20,6 +16,9 @@
 
 \usepackage{array}
 \usepackage{enumitem}
+% Define custom list environment for CV items
+\newlist{cvitemize}{itemize}{1}
+\setlist[cvitemize]{label=\textbullet,leftmargin=1em,itemsep=0.3em,topsep=0pt,parsep=0pt,partopsep=0pt}
 %\setlength\extrarowheight{1.5em} % adds some spacing between the lines of the CV's tabulars
 % not used here as not to interfer with other tables
 \usetikzlibrary{decorations.text}
@@ -50,6 +49,21 @@
 % avoid line overflow
 \setlength{\emergencystretch}{2pt}
 %---------------------------------------------------------------------------------
+% Semantic color definitions
+\definecolor{descriptioncolor}{HTML}{CCCCCC}
+
+% Logo visibility toggle
+\newif\ifshowlogos
+\showlogosfalse  % Set to \showlogostrue to display logos
+
+% Helper command for logo column
+\newcommand{\logocolumn}[1]{%
+  \ifshowlogos%
+    \centering\raisebox{-0.2cm}{\includegraphics[max width=1.2cm, max height=2cm, valign=t]{#1}}%
+  \else%
+    % Empty when logos are hidden
+  \fi%
+}
 
 \usepackage{titlesec} % Allows creating custom \sections
 
@@ -58,6 +72,18 @@
 \scshape\Large\raggedright}{}{0em}{}[\titlerule] % smallcaps, Large, continuous line - looks better if two columns, might look a bit too dramatic if just one ;)
 \titlespacing{\section}{0pt}{12pt}{5pt} % Spacing around titles {<left spacing>}{<before spacing>}{<after spacing>}
 %----------------------------------------------------
+
+% hyperref should be loaded near the end to properly patch other packages
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0}
+}
+
+%----------------------------------------------------
+% Semantic spacing commands
+%----------------------------------------------------
+\newcommand{\sidebarSectionSpace}{\vspace{3\bigskipamount}}
 
  \newcommand{\cvkeyword}[3]{
  \colorbox{#2}{\textcolor{#3}{#1}} \phantom{}%
@@ -82,8 +108,6 @@
 \end{tikzpicture}%
 }
 
-
-\usepackage{smartdiagram}
 %-----------------------------------------------------
 % set smartdiagram colours, from: https://github.com/Johayon/Data-Scientist-Resume-LaTeX/blob/master/twentysecondcv.cls
 
@@ -187,13 +211,13 @@
 \newcommand{\cvevent}[6]{%
   \raggedleft{#1} & \textbf{#2} \\
   & \textsc{#3} $\cdot$ {#4 ~\faAngleDoubleRight} \\[-0.5em]
-  \centering\raisebox{-0.2cm}{\includegraphics[max width=1.2cm, max height=2cm, valign=t]{#6}} & {\color{black!70}\footnotesize #5} \\
+  \logocolumn{#6} & {\color{black!70}\footnotesize #5} \\
   \rule{0pt}{1.2em} & \\
 }
 
 \newcommand{\cvsummary}[2]{%
-  \textbf{#1} \\[-0.5em]
-  {\color{black!70}\footnotesize #2} \\ \noalign{\vspace{1.2em}}
+  \textbf{#1} \\[-0.8em]
+  {\color{black!70}\footnotesize #2} \\ \noalign{\vspace{0.8em}}
 }
 
 \newcommand{\cvdegree}[6]{{#1} &
@@ -212,13 +236,13 @@
 
 % -----------------------------------------------------------------------------------
 
-\newcommand{\simpleheader}[5]{
+\newcommand{\simpleheader}[6]{
 \tikz[remember picture,overlay] {%
 \node[rectangle, fill=#1, anchor=north, minimum width=\paperwidth, minimum height=2.5cm](header) at (current page.north){};%
 \node[draw=none, align=left](name) at (header) {%
 {\Huge \color{#5} \textbf{#2} #3 }%
 };%
-\node[draw=none, below=0.1cm](description) at (name.south) {\color{white}#4};%
+\node[draw=none, below=0.1cm](description) at (name.south) {\color{#6}#4};%
 }\vspace{-0.7cm}%
 }
 

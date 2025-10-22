@@ -2,12 +2,11 @@
 % https://www.latextemplates.com/template/twenty-seconds-resumecv
 % https://www.latextemplates.com/template/friggeri-resume-cv
 
-\documentclass[lighthipster]{simplecv}
-% available options are: darkhipster, lighthipster, pastel, allblack, grey, verylight, withoutsidebar
-% withoutsidebar
+\documentclass[grayscale]{simplecv}
+% available option: grayscale
 \usepackage[utf8]{inputenc}
 \usepackage[default]{raleway}
-\usepackage[margin=1cm, a4paper]{geometry}
+\usepackage[top=1cm, left=1cm, right=1cm, bottom=0cm, a4paper]{geometry}
 \usepackage{array}
 
 %------------------------------------------------------------------ Variablen
@@ -30,7 +29,7 @@
 
 \section*{Start}
 
-\simpleheader{headercolour}{Beau}{Brewer}{C-suite (CEO/CTO/Director) Tech leader | People focused | Award-winning innovator}{white}
+\simpleheader{headercolour}{Beau}{Brewer}{C-suite (CEO/CTO/Director) Tech leader | People focused | Award-winning innovator}{white}{descriptioncolor}
 
 %------------------------------------------------
 
@@ -47,44 +46,50 @@
 
 \footnotesize
 {\setasidefontcolour
+\flushleft
+\href{mailto:redacted-email-address}{\infobubble{\faEnvelope}{black}{white}{redacted-email-address}} \\[0.8em]
+\href{tel:redacted-phone-number}{\infobubble{\faPhone}{black}{white}{redacted-phone-number}} \\[0.8em]
+\href{https://linkedin.com/in/beaunbrewer}{\infobubble{\faLinkedin}{black}{white}{beaunbrewer}} \\[0.8em]
+\href{""}{\infobubble{\faGlobe}{black}{white}{Salt Lake City, UT}} \\[0.8em]
+
 \flushright
-\href{mailto:redacted-email-address}{\infobubble{\faEnvelope}{black}{white}{redacted-email-address}}
-\href{https://linkedin.com/in/beaunbrewer}{\infobubble{\faLinkedin}{black}{white}{beaunbrewer}}
 
 \vspace{4em}
 
 \bg{black}{white}{About me}\\[0.8em]
 
-{\footnotesize
-\textbf{Business leader} and \textbf{25-year} tech veteran who thrives on closing the gap between executive vision and engineering execution. \\[1.2em]
+\begin{spacing}{1.2}
+\footnotesize
+\textbf{Business leader} and \textbf{20+ year tech veteran} who thrives on closing the gap between executive vision and engineering execution.
+
+%
+
+\vspace{0.8em}
+
 Excels at managing large, distributed teams, inspiring them to rally around a challenging vision that has successfully resulted in company exits and key fundraising rounds.
-}
+\end{spacing}
 
 % Expertise in architecting and managing platforms serving more than 170 million users, with deep, hands-on fluency in end-to-end AI/ML solutions, scalable cloud architecture, and user-centric design}.
-\bigskip
-\bigskip
-\bigskip
+\sidebarSectionSpace
 
 \bg{black}{white}{Core Skills} \\[0.8em]
 
 Product Vision \& Innovation \\[0.6em]
 User-Centric Engineering \\[0.6em]
-Agile \& XP Methodologies \\[0.6em]
-Cloud Infrastructure (AWS) \\[0.6em]
 AI/ML Solutions \\[0.6em]
+Cloud Infrastructure (AWS) \\[0.6em]
+Agile \& XP Methodologies \\[0.6em]
 Microservices Architecture \\[0.6em]
+Game Theory \\[0.6em]
 Data \& Security \\[0.6em]
 Strong Communication \& Management Skills \\[0.6em]
 Multi-language Developer \\[0.6em]
 C-Suite \& Board-Level Leadership \\[0.6em]
 
-\bigskip
-\bigskip
-\bigskip
+\sidebarSectionSpace
 
 \bg{black}{white}{Interests}\\[0.8em]
 
-Game Theory \\[0.6em]
 Beekeeping \\[0.6em]
 Chess \\[0.6em]
 Skydiving \\[0.6em]
@@ -99,48 +104,49 @@ Classical Music \\[0.6em]
 \switchcolumn
 \small
 \section*{Professional Experience}
-\begin{tabular}{p{2.4cm}@{\hspace{0.5cm}}|@{\hspace{0.5cm}} p{0.5\textwidth}}
+\begin{tabular}{p{2.2cm}@{\hspace{0.5cm}}|@{\hspace{0.5cm}} p{0.53\textwidth}}
     \cvevent{2025--Present}{BoxTalk}{AI Technology Advisor}{SLC, UT \color{cvgreen}}{%
-        \begin{itemize}[leftmargin=1em,itemsep=0.3em,topsep=0pt,parsep=0pt,partopsep=0pt]
+        \begin{cvitemize}
             \item Providing expert guidance on the architecture and management of the technology stack for a hyper-specific, intelligent platform aimed at transforming fulfillment operations.
-        \end{itemize}%
+        \end{cvitemize}%
     }{logo-boxtalk}
     \cvevent{2022--2025}{Fluid Financial Technologies}{CEO | CTO}{SLC, UT \color{cvgreen}}{%
-        \begin{itemize}[leftmargin=1em,itemsep=0.3em,topsep=0pt,parsep=0pt,partopsep=0pt]
+        \begin{cvitemize}
             \item Lead the company's strategic vision, technology roadmap, and overall business operations, blending executive leadership with hands-on technical direction.
-        \end{itemize}%
+            \item Implemented all requirements to achieve SOC 2 Type II compliance.
+        \end{cvitemize}%
     }{logo-fluid}
-    \cvevent{2012--2022}{WildWorks Inc.}{CTO}{SLC, UT \color{cvgreen}}{%
-        \begin{itemize}[leftmargin=1em,itemsep=0.3em,topsep=0pt,parsep=0pt,partopsep=0pt]
+    \cvevent{2012--2022}{WildWorks Inc.}{CTO}{Draper, UT \color{cvgreen}}{%
+        \begin{cvitemize}
             \item Architected and managed the technology platform for Animal Jam, one of the world's largest online MMO for kids, scaling to support over 170+ million users, 60k concurrent players, and hundreds of thousands of API calls per minute.
-            \item Directed a strategic migration from a monolitic platform to a distributed architecture of 230+ microservices, dramatically improving performance, scalability, and service reusability.
+            \item Directed a strategic migration from a monolithic platform to a distributed architecture of 230+ microservices, dramatically improving performance, scalability, and service reusability.
             \item Oversaw performance, reliability, security, and infrastructure planning for a platform processing over 65 million monthly pageviews.
-            \item Mentored development mteams on implementing new technologies, architecting high-performance, fault-tolerant applications, and optimizing development and QA processes.
-        \end{itemize}%        
+            \item Mentored development teams on implementing new technologies, architecting high-performance, fault-tolerant applications, and optimizing development and QA processes.
+        \end{cvitemize}%
     }{logo-wildworks}
     \cvevent{2016--Present}{Virtera}{Co-founder | CTO}{SLC, UT \color{cvgreen}}{%
-        \begin{itemize}[leftmargin=1em,itemsep=0.3em,topsep=0pt,parsep=0pt,partopsep=0pt]
+        \begin{cvitemize}
             \item Spearheaded the development, launch, and management of two industry-first tools: the award-winning Trex® AR application (BobVila.com "Tool of the Year," 2025) and the best-in-class Trex® Railing Designer.
             \item Architected the Trex® Railing Designer tool to generate comprehensive parts lists from complex DIY railing designs, significantly improving user experience and streamlining the ordering process.
-        \end{itemize}
+        \end{cvitemize}
     }{logo-virtera}
-    \cvevent{2005--2007}{St. Jude Children's Research Hospital}{Contractor/Developer}{SLC, UT \color{cvgreen}}{%
-        \begin{itemize}[leftmargin=1em,itemsep=0.3em,topsep=0pt,parsep=0pt,partopsep=0pt]
+    \cvevent{2005--2007}{St. Jude Children's Research Hospital}{Contractor/Developer}{Remote \color{cvgreen}}{%
+        \begin{cvitemize}
             \item Developed a game dedicated to St. Jude's Math-A-Thon which raised over \$500 million for St. Jude Children's Research Hospital through its participants and supporters.
-        \end{itemize}%
+        \end{cvitemize}%
     }{logo-st-jude}
     \cvevent{2000--Present}{Compulsive Flyers}{Manager}{SLC, UT \color{cvgreen}}{%
-        \begin{itemize}[leftmargin=1em,itemsep=0.3em,topsep=0pt,parsep=0pt,partopsep=0pt]
+        \begin{cvitemize}
             \item As a Co-Founder and event manager of a national championship skydiving team, I am responsible for maintaining high-profile event relationships and securing contracts, including NASCAR, University Sporting Events, and The Stadium of Fire.
-        \end{itemize}%
+        \end{cvitemize}%
     }{logo-cf}
 \end{tabular}
 \section*{Humanitarian and Volunteer Work}
 \begin{tabular}{p{0.58\textwidth}}
-    \cvsummary{Daisy School}{Established a library for the children of the Daisy School orphanage in Kenya.}
-    \cvsummary{Families Helping Families}{Project Captain - built homes in Puerto Penasco, Mexico for underprivileged families.}
-    \cvsummary{Reach the Children}{Civil Engineer - Built a school in a remote village in Uganda.}
+    \cvsummary{Daisy School}{Established a library for the 300+ children of the Daisy School orphanage in Kenya.}
+    \cvsummary{Families Helping Families}{Project Captain - Directed volunteer teams in building permanent housing for low-income families in Mexico.}
+    \cvsummary{Reach the Children}{Civil Engineer - Led engineering efforts to construct a school facility in rural Uganda, expanding access to education.}
 \end{tabular}
-\end{paracol}
 
+\end{paracol}
 \end{document}
